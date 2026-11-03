@@ -6,7 +6,7 @@
      like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=2ee61c9c-29a8-411d-aec9-439338c84bff
      Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
-<meta name="theme-color" content="#F0EEE9"/>
+<meta name="theme-color" content="#FFFFFF"/>
 <link rel="manifest" href="manifest.json"/>
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
 <link rel="apple-touch-icon" href="icon-192.png"/>
@@ -20,19 +20,19 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 :root{
-  --bg:#F0EEE9;--surface:#FFFFFF;--surface2:#F7F5F0;--border:#E5E2DA;
-  --text:#1A1A1A;--muted:#6B6860;--light:#9A9890;
-  --clay:#C4714A;--sage:#6B8F71;--blue:#4A7FC4;--purple:#7C5CBF;
-  --green:#2D9B6F;--red:#C44A4A;--amber:#C48B2A;
+  --bg:#FFFFFF;--surface:#FFFFFF;--surface2:#F5F5F7;--border:#E5E5EA;
+  --text:#000000;--muted:#8E8E93;--light:#A9A9AF;
+  --clay:#007AFF;--sage:#34C759;--blue:#007AFF;--purple:#AF52DE;
+  --green:#34C759;--red:#FF3B30;--amber:#FF9500;
   --r:12px;--r-s:8px;
-  --shadow:0 2px 8px rgba(0,0,0,.07);--shadow-md:0 4px 16px rgba(0,0,0,.1);
+  --shadow:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 12px rgba(0,0,0,.12);
 }
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;font-size:14px;line-height:1.5;}
-input,select,button,textarea{font-family:'Inter',sans-serif;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;font-size:16px;line-height:1.6;}
+input,select,button,textarea{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}
 
 /* ── NAV ── */
-.nav{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:0 16px;position:sticky;top:0;z-index:50;min-height:52px;box-shadow:var(--shadow);}
-.nav-brand{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--text);margin-right:16px;white-space:nowrap;flex-shrink:0;}
+.nav{display:flex;align-items:center;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:0 16px;position:sticky;top:0;z-index:50;min-height:56px;box-shadow:0 1px 2px rgba(0,0,0,.06);}
+.nav-brand{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:20px;font-weight:700;color:var(--text);margin-right:16px;white-space:nowrap;flex-shrink:0;letter-spacing:-0.5px;}
 .nav-brand span{color:var(--clay);}
 .nav-tabs{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none;-ms-overflow-style:none;}
 .nav-tabs::-webkit-scrollbar{display:none;}
@@ -49,7 +49,7 @@ input,select,button,textarea{font-family:'Inter',sans-serif;}
 .tab-panel.active{display:block;}
 
 /* ── CARDS ── */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
 .card+.card{margin-top:14px;}
 .card h3{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;}
 .stack{display:flex;flex-direction:column;gap:14px;}
@@ -68,7 +68,7 @@ input,select,button,textarea{font-family:'Inter',sans-serif;}
 .mchip.active{background:var(--clay);color:#fff;border-color:var(--clay);}
 
 /* ── STAT CARDS ── */
-.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
 .stat-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;}
 .stat-value{font-size:26px;font-weight:700;line-height:1.1;}
 .stat-sub{font-size:12px;color:var(--muted);margin-top:3px;}
@@ -157,9 +157,9 @@ input,select,button,textarea{font-family:'Inter',sans-serif;}
 .ocr-banner button{background:none;border:none;cursor:pointer;color:inherit;font-size:16px;padding:0;}
 
 /* ── BUTTONS ── */
-.btn{border-radius:var(--r-s);padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:.15s;display:inline-flex;align-items:center;gap:6px;}
-.btn-primary{background:var(--clay);color:#fff;}
-.btn-primary:hover{background:#b3613d;}
+.btn{border-radius:10px;padding:10px 18px;font-size:15px;font-weight:600;cursor:pointer;border:none;transition:.2s;display:inline-flex;align-items:center;gap:6px;}
+.btn-primary{background:var(--clay);color:#fff;box-shadow:0 2px 8px rgba(0,122,255,.3);}
+.btn-primary:hover{background:#0051D5;box-shadow:0 4px 12px rgba(0,122,255,.4);}
 .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--muted);}
 .btn-ghost:hover{background:var(--surface2);}
 .btn-block{width:100%;justify-content:center;padding:11px;}
@@ -264,7 +264,7 @@ input,select,button,textarea{font-family:'Inter',sans-serif;}
 .book-row:hover{background:var(--border);}
 /* ── MODAL LIVROS ── */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;}
-.modal-box{background:var(--surface);border-radius:16px;padding:28px 24px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-md);position:relative;}
+.modal-box{background:var(--surface);border-radius:20px;padding:28px 24px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;box-shadow:0 8px 28px rgba(0,0,0,.15);position:relative;}
 .modal-box h2{font-family:'Lora',serif;font-size:22px;font-weight:600;margin-bottom:20px;}
 .modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);}
 .modal-field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
