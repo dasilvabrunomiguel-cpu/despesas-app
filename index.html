@@ -663,52 +663,20 @@ async function pullFullDataFromSupabase(){
 // ══ PUSH DE OPERAÇÕES INDIVIDUAIS ══
 async function syncSingleOp(op){
   try{
+    // grava o estado completo na mesma tabela de onde lê (despesas_state)
     const now=new Date().toISOString();
-    let r;
-
-    if(op.type==='insert'){
-      // INSERT novo lançamento
-      const expData={...op.data,updated_at:now};
-      r=await fetch(SUPABASE_URL+'/rest/v1/expenses?',{
-        method:'POST',
-        headers:SB_HEADERS,
-        body:JSON.stringify(expData)
-      });
-    } else if(op.type==='update'){
-      // UPDATE lançamento existente — verificar conflito
-      const {id,data,remoteUpdatedAt}=op;
-      const exp=S.exps.find(e=>e.id===id);
-      if(!exp){
-        console.warn('Exp não existe:', id);
-        return false;
-      }
-
-      // Se device remoto mudou entretanto, avisar
-      if(remoteUpdatedAt&&remoteUpdatedAt!==exp._lastRemoteUpdated){
-        setSyncBadge('conflict');
-        toast('⚠️ Este lançamento foi alterado noutro dispositivo. Recarregar para ver.','err');
-        return false;
-      }
-
-      const updateData={...data,updated_at:now};
-      r=await fetch(SUPABASE_URL+'/rest/v1/expenses?id=eq.'+id,{
-        method:'PATCH',
-        headers:SB_HEADERS,
-        body:JSON.stringify(updateData)
-      });
-    } else if(op.type==='delete'){
-      // SOFT DELETE — marcar como apagado
-      r=await fetch(SUPABASE_URL+'/rest/v1/expenses?id=eq.'+op.id,{
-        method:'PATCH',
-        headers:SB_HEADERS,
-        body:JSON.stringify({deleted_at:now})
-      });
-    }
-
+    const r=await fetch(SUPABASE_URL+'/rest/v1/despesas_state?id=eq.main',{
+      method:'PATCH',
+      headers:{...SB_HEADERS,'Prefer':'return=representation'},
+      body:JSON.stringify({data:S,updated_at:now})
+    });
     if(!r||!r.ok)throw new Error(r?.status||'Unknown');
+    const rows=await r.json();
+    if(!Array.isArray(rows)||rows.length===0)throw new Error('Nenhuma linha atualizada');
     lastSyncOk=true;
     return true;
   }catch(e){
+    console.warn('Sync falhou',e);
     lastSyncOk=false;
     return false;
   }
