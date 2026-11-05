@@ -17,6 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 :root{
@@ -457,7 +459,7 @@ input,select,button,textarea{font-family:-apple-system,BlinkMacSystemFont,'Segoe
 const MN=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 const MS=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 const SK='despesas-v4';
-const CL={fixo:'#4A7FC4',variavel:'#C4714A',misto:'#7C5CBF',green:'#2D9B6F',red:'#C44A4A',amber:'#C48B2A'};
+const CL={fixo:'#007AFF',variavel:'#FF3B30',misto:'#5856D6',green:'#34C759',red:'#FF2B2B',amber:'#FF9500'};
 
 /* ══ SEED DATA ══ */
 const CAT_DEFS=[
@@ -1879,6 +1881,9 @@ function catModalAdd(){
   await load();
   renderTab('dash');
 })();
+</script>
+<script>
+if("serviceWorker" in navigator)navigator.serviceWorker.register("/sw.js");
 </script>
 </body>
 </html>
